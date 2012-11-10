@@ -25,7 +25,7 @@ function docReady() {
 			
 		document.addEventListener("online", function(){
 			alert(navigator.network.connection.type);
-			if(navigator.network.connection.type=="wifi"){
+			if(navigator.network.connection.type=="3g"){
 				navigator.geolocation.getCurrentPosition(function(position){
 					datosgeo.innerHTML="latitud:"+position.coords.latitude+"<br />"+"longitud:"+position.coords.longitude;					
 				}, function(err){
