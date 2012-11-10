@@ -25,13 +25,13 @@ function docReady() {
 			
 		document.addEventListener("online", function(){
 			alert(navigator.network.connection.type);
-			if(navigator.network.connection.type=="3g"){
+			if(navigator.network.connection.type=="wifi"){
 				navigator.geolocation.getCurrentPosition(function(position){
 					datosgeo.innerHTML="latitud:"+position.coords.latitude+"<br />"+"longitud:"+position.coords.longitude;					
 				}, function(err){
 					alert(err.code);
 				});
-			}
+			} 
 		},false);
 	},false);
 }
