@@ -1,5 +1,5 @@
 // JavaScript Document
-document.addEventListener("load", function(){
+function docReady() {
 		document.addEventListener("deviceready", function(){
 	/*		//acciones
 			//grabar info en bd comun
@@ -29,12 +29,9 @@ document.addEventListener("load", function(){
 				navigator.geolocation.getcurrentposition(function(position){
 					datosgeo.innerHTML="latitud:"+position.latitude+"<br />"+"longitud:"+position.longitude;					
 				}, function(err){
-					alert(err.message);
+					alert(err.code);
 				});
 			}
 		},false);
-		
 	},false);
-
-	alert('s');
-},false);
+}
