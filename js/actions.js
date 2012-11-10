@@ -1,6 +1,6 @@
 // JavaScript Document
-document.addeventlistener("load", function(){
-		document.addeventlistener("deviceready", function(){
+document.addEventListener("load", function(){
+		document.addEventListener("deviceready", function(){
 	/*		//acciones
 			//grabar info en bd comun
 			window.localStorage.setItem("active",true);
@@ -15,7 +15,7 @@ document.addeventlistener("load", function(){
 
 			if(window.localStorage.getItem("active")){
 				alert(window.localStorage.getItem("active"));
-				document.addlistener("resume",function(){
+				document.addEventListener("resume",function(){
 					window.localStorage.setItem("puntos",window.localStorage.getItem("active")+1);
 				},false);
 			} else {
@@ -23,7 +23,7 @@ document.addeventlistener("load", function(){
 				window.localStorage.setItem("puntos",0);
 			}
 			
-		document.addlistener("online", function(){
+		document.addEventListener("online", function(){
 			alert(navigator.network.connection.type);
 			if(navigator.network.connection.type=="wifi"){
 				navigator.geolocation.getcurrentposition(function(position){
@@ -35,4 +35,6 @@ document.addeventlistener("load", function(){
 		},false);
 		
 	},false);
+
+	alert('s');
 },false);
