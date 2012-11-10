@@ -16,7 +16,7 @@ function docReady() {
 			if(window.localStorage.getItem("active")){
 				alert(window.localStorage.getItem("active"));
 				document.addEventListener("resume",function(){
-					window.localStorage.setItem("puntos",window.localStorage.getItem("active")+1);
+					window.localStorage.setItem("puntos",window.localStorage.getItem("puntos")+1);
 				},false);
 			} else {
 				window.localStorage.setItem("active",true);
@@ -26,8 +26,8 @@ function docReady() {
 		document.addEventListener("online", function(){
 			alert(navigator.network.connection.type);
 			if(navigator.network.connection.type=="wifi"){
-				navigator.geolocation.getcurrentposition(function(position){
-					datosgeo.innerHTML="latitud:"+position.latitude+"<br />"+"longitud:"+position.longitude;					
+				navigator.geolocation.getCurrentPosition(function(position){
+					datosgeo.innerHTML="latitud:"+position.coords.latitude+"<br />"+"longitud:"+position.coords.longitude;					
 				}, function(err){
 					alert(err.code);
 				});
